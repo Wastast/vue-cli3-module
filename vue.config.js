@@ -8,9 +8,11 @@ module.exports = {
       alias: {
         'vue$': 'vue/dist/vue.esm.js',
         '@': path.resolve('src'),
-        'css': path.resolve('src/assets/css'),
-        'img': path.resolve('src/assets/img'),
-        'js': path.resolve('src/assets/js'),
+        'assets': path.resolve('src/assets'),  // 配置静态资源请求路径
+        'css': path.resolve('src/styles'),  // 配置全局css请求路径
+        'api': path.resolve('src/api'), // 配置请求接口的请求路径
+        'js': path.resolve('src/utils'),  // 配置全局js方法请求路径
+        'cop': path.resolve('src/components'), // 配置全局组件的请求路径
       }
     },
   },

@@ -32,6 +32,9 @@ npm run lint
 ├── src                        // 源代码
 │   ├── assets                 // 图片,等静态资源
 │   ├── components             // 全局公用组件
+│   ├── api                    // 请求资源文件夹
+│   ├── ├── http.js            // axios的请求配置，请求拦截器，响应拦截器等
+│   ├── ├── api.js             // 请求接口书写处(可以根据需求拆分成多个js文件)
 │   ├── store                  // vuex仓库
 │   ├── styles                 // 全局样式
 │   ├── utils                  // 全局共有方法
