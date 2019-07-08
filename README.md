@@ -1,5 +1,4 @@
-# vue-cli-module (基于vue-router,vuex,babel,css预处理器创建的模板，无ESLint)
-# vue-cli3的模板，下载后，在终端键入npm i 即可使用(已配置axios,qs)
+# vue-cli-module (基于vue-router,vuex,babel,css预处理器创建的模板，无ESLint,已安装axios,qs)
 
 ## 下载该项目的模块依赖包
 ```
