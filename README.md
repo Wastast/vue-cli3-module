@@ -1,6 +1,10 @@
-# vue-cli-module (基于vue-router,vuex,babel,css预处理器创建的模板，无ESLint,已安装axios,qs)
-
-## 下载该项目的模块依赖包
+# vue-cli-module (基于vue-router,vuex,babel,css预处理器创建的模板)
+###已下载的模块包
+* **axios** 进行了基础的拦截器配置
+* **qs** axios发送post请求所需要的序列化数据
+* **vuescroll** 基于vue所使用的滚动条插件,详细配置参考[官网](https://vuescrolljs.yvescoding.org/zh/guide/)
+* **babel-polyfill** 更好的兼容浏览器版本,详细配置参考[babel官网](https://www.babeljs.cn/docs/babel-polyfill)
+### 下载该项目的模块依赖包
 ```
 npm install
 ```
@@ -37,7 +41,7 @@ npm run lint
 │   ├── ├── api.js             // 请求接口书写处(可以根据需求拆分成多个js文件)
 │   ├── store                  // vuex仓库
 │   ├── styles                 // 全局样式
-│   ├── utils                  // 全局共有方法
+│   ├── utils                  // 全局js
 │   ├── views                  // 页面书写处
 │   ├── App.vue                // 入口页面
 │   ├── main.js                // 入口 加载组件 初始化等
