@@ -4,6 +4,7 @@ import '@babel/polyfill'
 import router from './router'
 import store from './store/store'
 import 'css/reset.css'
+import './permission'
 
 Vue.config.productionTip = false
 

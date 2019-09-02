@@ -20,10 +20,11 @@ mark{background-color:transparent}
 a,ins,s,u,del{text-decoration:none}
 sup,sub{vertical-align:baseline}
 html {overflow-x: hidden;height: 100%;font-size: 50px;-webkit-tap-highlight-color: transparent;}
-body {font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, sans-serif;color: #333;font-size: .28em;line-height: 1;-webkit-text-size-adjust: none;}
+body {font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, sans-serif;color: #333;font-size: .28em;line-height: 1;-webkit-text-size-adjust: none;user-select: none;}
 hr {height: .02rem;margin: .1rem 0;border: medium none;border-top: .02rem solid #cacaca;}
 a {color: #25a4bb;text-decoration: none;}
 a:hover {color: #25a4bb;text-decoration: none;}
 .hide {display: none;} /* 隐藏 */
 .show {display: block;} /* 显示 */
 .ellipsis {white-space: nowrap;overflow: hidden;text-overflow: ellipsis;} /* 字体溢出显示省略号 */
+.SPanZoomBar {display: none !important;}

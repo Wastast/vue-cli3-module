@@ -42,9 +42,12 @@ npm run lint
 │   ├── store                  // vuex仓库
 │   ├── styles                 // 全局样式
 │   ├── utils                  // 全局js
+│   ├── ├── auth.js            // 用户授权js, getToken,setToken,removeToken
+│   ├── ├── esresize.js        // echarts自适应js, 缩小浏览器时，echarts图标自适应
 │   ├── views                  // 页面书写处
 │   ├── App.vue                // 入口页面
 │   ├── main.js                // 入口 加载组件 初始化等
+│   ├── permission.js          // 检测用户是否登录，以及token
 │   ├── router.js              // 路由配置
 ├── .browserslistrc            // 浏览器兼容性的配置
 ├── .gitignore                 // git 忽略项
