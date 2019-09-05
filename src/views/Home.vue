@@ -1,16 +1,22 @@
 <template>
-  <div class="home">
-    路由连接成功
+  <div class="Home">
+    这是主页
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'home'
+  name: 'Home',
+  mounted () {
+    
+  },
 }
 </script>
 
-<style lang="stylus" scoped>
+<style scoped lang="scss">
+.Home {
+  width: 100px;
+  height: 100px;
+  background-color: $nav-color;
+}
 </style>
-

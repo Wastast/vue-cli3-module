@@ -39,6 +39,7 @@ npm run lint
 │   ├── api                    // 请求资源文件夹
 │   ├── ├── http.js            // axios的请求配置，请求拦截器，响应拦截器等
 │   ├── ├── api.js             // 请求接口书写处(可以根据需求拆分成多个js文件)
+│   ├── mock                   // 用于模仿假数据接口
 │   ├── store                  // vuex仓库
 │   ├── styles                 // 全局样式
 │   ├── utils                  // 全局js
@@ -47,14 +48,14 @@ npm run lint
 │   ├── views                  // 页面书写处
 │   ├── App.vue                // 入口页面
 │   ├── main.js                // 入口 加载组件 初始化等
-│   ├── permission.js          // 检测用户是否登录，以及token
+│   ├── permission.js          // 检测用户是否登录，以及token,路由守卫配置
 │   ├── router.js              // 路由配置
-├── .browserslistrc            // 浏览器兼容性的配置
 ├── .gitignore                 // git 忽略项
 ├── .babel.config.js           // 使用babel代码转码器时的配置
+├── .env.development           // 开发环境请求路径配置
+├── .env.production            // 生产环境请求路径配置
 ├── package-lock.json          // 项目所依赖项的详细信息
 ├── package.json               // package.json
-├── postcss.config.js          // Autoprefixer插件的配置,该插件可以自动添加各大浏览器产商的前缀
 ├── README.md                  // 项目自述文件
 └── vue.config.js              // 项目打包配置
 ```
