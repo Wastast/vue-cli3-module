@@ -1,5 +1,5 @@
 var EleResize = {
-  _handleResize: function (e) {
+  _handleResize: function(e) {
     var ele = e.target || e.srcElement
     var trigger = ele.__resizeTrigger__
     if (trigger) {
@@ -15,7 +15,7 @@ var EleResize = {
       }
     }
   },
-  _removeHandler: function (ele, handler, context) {
+  _removeHandler: function(ele, handler, context) {
     var handlers = ele.__z_resizeListeners
     if (handlers) {
       var size = handlers.length
@@ -28,23 +28,26 @@ var EleResize = {
       }
     }
   },
-  _createResizeTrigger: function (ele) {
+  _createResizeTrigger: function(ele) {
     var obj = document.createElement('object')
-    obj.setAttribute('style',
-      'display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden;opacity: 0; pointer-events: none; z-index: -1;')
+    obj.setAttribute(
+      'style',
+      'display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden;opacity: 0; pointer-events: none; z-index: -1;'
+    )
     obj.onload = EleResize._handleObjectLoad
     obj.type = 'text/html'
     ele.appendChild(obj)
     obj.data = 'about:blank'
     return obj
   },
-  _handleObjectLoad: function (evt) {
+  _handleObjectLoad: function(evt) {
     this.contentDocument.defaultView.__resizeTrigger__ = this.__resizeElement__
     this.contentDocument.defaultView.addEventListener('resize', EleResize._handleResize)
   }
 }
-if (document.attachEvent) { // ie9-10
-  EleResize.on = function (ele, handler, context) {
+if (document.attachEvent) {
+  // ie9-10
+  EleResize.on = function(ele, handler, context) {
     var handlers = ele.__z_resizeListeners
     if (!handlers) {
       handlers = []
@@ -57,7 +60,7 @@ if (document.attachEvent) { // ie9-10
       context: context
     })
   }
-  EleResize.off = function (ele, handler, context) {
+  EleResize.off = function(ele, handler, context) {
     var handlers = ele.__z_resizeListeners
     if (handlers) {
       EleResize._removeHandler(ele, handler, context)
@@ -68,7 +71,7 @@ if (document.attachEvent) { // ie9-10
     }
   }
 } else {
-  EleResize.on = function (ele, handler, context) {
+  EleResize.on = function(ele, handler, context) {
     var handlers = ele.__z_resizeListeners
     if (!handlers) {
       handlers = []
@@ -86,7 +89,7 @@ if (document.attachEvent) { // ie9-10
       context: context
     })
   }
-  EleResize.off = function (ele, handler, context) {
+  EleResize.off = function(ele, handler, context) {
     var handlers = ele.__z_resizeListeners
     if (handlers) {
       EleResize._removeHandler(ele, handler, context)
@@ -102,4 +105,4 @@ if (document.attachEvent) { // ie9-10
     }
   }
 }
-export {EleResize}
+export { EleResize }

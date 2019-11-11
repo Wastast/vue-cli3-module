@@ -1,7 +1,7 @@
-import { Message,MessageBox } from 'element-ui'
+import { Message } from 'element-ui'
 
 // 提示框
-export const TipsPop = ({message,type="success"}) => {
+export const TipsPop = ({ message, type = 'success' }) => {
   Message({
     message: message,
     type: type,
