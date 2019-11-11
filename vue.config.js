@@ -7,21 +7,21 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        'vue$': 'vue/dist/vue.esm.js',
-        '@': path.resolve('src'),
+        vue$: 'vue/dist/vue.esm.js',
+        '@': path.resolve('src')
       }
-    },
+    }
   },
   css: {
     loaderOptions: {
       sass: {
-        data: `@import "@/styles/index.scss";`
+        prependData: `@import "~@/styles/index.scss";`
       }
     }
   },
   // webpack-devServer 的配置
-  devServer:{
+  devServer: {
     port: 7700, // 端口号
-    open: true, // 是否在启动成功后直接打开页面
+    open: true // 是否在启动成功后直接打开页面
   }
 }
