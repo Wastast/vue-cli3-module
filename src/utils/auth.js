@@ -1,13 +1,13 @@
-import store from '@/store'
+import store from '@/store';
 
 // 获取权限
 export function getToken() {
   // 获取缓存中的token数据，如果存在则读取
   if (sessionStorage.token) {
-    setToken(sessionStorage.token)
-    sessionStorage.removeItem('token')
+    setToken(sessionStorage.token);
+    sessionStorage.removeItem('token');
   }
-  return store.state.user.token || ''
+  return store.state.user.token || '';
 }
 
 // 设置权限
@@ -17,19 +17,19 @@ export function setToken(token) {
     window.addEventListener(
       'beforeunload',
       () => {
-        sessionStorage.setItem('token', store.state.user.token)
+        sessionStorage.setItem('token', store.state.user.token);
       },
       {
         once: true
       }
-    )
-  })
+    );
+  });
 }
 
 // 去除权限
 export function removeToken() {
   // 去除token 刷新浏览器
   store.dispatch('setKey', '').then(() => {
-    window.location.reload(true)
-  })
+    window.location.reload(true);
+  });
 }

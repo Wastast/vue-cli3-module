@@ -22,10 +22,10 @@ export default {
   name: 'page404',
   computed: {
     message() {
-      return `站长说你不能进入这个页面...`
+      return `站长说你不能进入这个页面...`;
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

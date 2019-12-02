@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 // 将页面中的路由都进行集成
 export const constantRoutes = [
@@ -23,20 +23,20 @@ export const constantRoutes = [
   },
   // 指向页面错误跳转到404
   { path: '*', redirect: '/404', hidden: true }
-]
+];
 
 // 创建一个vue-router 并且每次切换页面都调整滚动条的高度,并且存入固定路由界面
 const createRouter = () =>
   new VueRouter({
     scrollBehavior: () => ({ y: 0 }),
     routes: constantRoutes
-  })
+  });
 
-// 重置路由
+// 重置路由方法
 export function resetRouter() {
-  const newRouter = createRouter()
-  router.matcher = newRouter.matcher // reset router
+  const newRouter = createRouter();
+  router.matcher = newRouter.matcher; // reset router
 }
 
-const router = createRouter()
-export default router
+const router = createRouter();
+export default router;

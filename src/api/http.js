@@ -1,33 +1,33 @@
-import axios from 'axios'
-import qs from 'qs'
-import { getToken, removeToken } from '@/utils/auth.js'
-import { TipsPop } from '@/utils/el_ui.js'
+import axios from 'axios';
+import qs from 'qs';
+import { getToken, removeToken } from '@/utils/auth.js';
+import { TipsPop } from '@/utils/el_ui.js';
 
-let baseUrl = process.env.VUE_APP_BASE_API
+let baseUrl = process.env.VUE_APP_BASE_API;
 // 将导出为全局
-window.req = baseUrl
+window.req = baseUrl;
 
 // 添加axios 根据环境进行判断添加请求端口  process.env.NODE_ENV === 'production' 判断请求环境是否在生产环境
-axios.defaults.baseURL = baseUrl
+axios.defaults.baseURL = baseUrl;
 // 添加axios在请求时默认的配置
-axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 // 当请求超过20s就会告知当前请求超时，请刷新
-axios.defaults.timeout = 200000
+axios.defaults.timeout = 200000;
 
 // 请求拦截器
 axios.interceptors.request.use(
   config => {
     // 在每次请求的时候拦截请求的头部,在此时可以添加token以及一些后台所需要的令牌
-    let token = getToken()
+    let token = getToken();
     if (token) {
-      config.headers.common['token'] = token
+      config.headers.common['token'] = token;
     }
-    return config
+    return config;
   },
   error => {
-    return Promise.error(error)
+    return Promise.error(error);
   }
-)
+);
 
 // 响应拦截器
 axios.interceptors.response.use(
@@ -35,13 +35,13 @@ axios.interceptors.response.use(
     // 如果返回的状态码为200，说明接口请求成功，可以正常拿到数据
     // 否则的话抛出错误
     if (response.status === 200) {
-      return Promise.resolve(response)
+      return Promise.resolve(response);
     } else {
       TipsPop({
         message: '数据请求失败',
         type: 'error'
-      })
-      return Promise.reject(response)
+      });
+      return Promise.reject(response);
     }
   },
   // 服务器状态码不是2开头的的情况
@@ -56,21 +56,21 @@ axios.interceptors.response.use(
           TipsPop({
             message: '未登录或登录过期,请重新登录',
             type: 'error'
-          })
-          removeToken()
-          break
+          });
+          removeToken();
+          break;
         // 404请求不存在
         case 404:
           TipsPop({
             message: '网络请求不存在',
             type: 'error'
-          })
-          break
+          });
+          break;
       }
-      return Promise.reject(error.response)
+      return Promise.reject(error.response);
     }
   }
-)
+);
 
 /**
  * get方法，对应get请求
@@ -85,12 +85,12 @@ export function get(url, params) {
         params: params
       })
       .then(res => {
-        resolve(res.data)
+        resolve(res.data);
       })
       .catch(err => {
-        reject(err.data)
-      })
-  })
+        reject(err.data);
+      });
+  });
 }
 
 /**
@@ -103,10 +103,10 @@ export function post(url, params) {
     axios
       .post(url, qs.stringify(params))
       .then(res => {
-        resolve(res.data)
+        resolve(res.data);
       })
       .catch(err => {
-        reject(err.data)
-      })
-  })
+        reject(err.data);
+      });
+  });
 }

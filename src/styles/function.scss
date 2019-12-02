@@ -1,3 +1,5 @@
+// scss 全局函数写入
+
 // px 转换成 rem
 @function px2rem ($size) {
   @return ($size / 50)
