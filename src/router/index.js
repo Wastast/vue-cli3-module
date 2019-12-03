@@ -31,6 +31,7 @@ const createRouter = () =>
     scrollBehavior: () => ({ y: 0 }),
     routes: constantRoutes
   });
+// };
 
 // 重置路由方法
 export function resetRouter() {

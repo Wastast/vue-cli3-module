@@ -22,7 +22,7 @@ export default {
   name: 'page404',
   computed: {
     message() {
-      return `站长说你不能进入这个页面...`;
+      return `哎呀！报错了,您输入的页面暂不存在...`;
     }
   }
 };

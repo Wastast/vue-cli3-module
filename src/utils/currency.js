@@ -1,7 +1,10 @@
-// 全局通用函数
+// 获取数据的类型
 export const getDataType = obj => {
-  if (obj === null) return String(obj);
   let type;
+
+  if (obj === null) {
+    return String(obj);
+  }
   if (typeof obj === 'object') {
     type = Object.prototype.toString
       .call(obj)
