@@ -13,7 +13,7 @@ export function getToken() {
 // 设置权限
 export function setToken(token) {
   store.dispatch('setKey', token).then(() => {
-    // 当页面刷新的时候 将token放入缓存中
+    // 当页面刷新的时候 将token放入webStorage中
     window.addEventListener(
       'beforeunload',
       () => {
