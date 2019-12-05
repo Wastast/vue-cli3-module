@@ -61,6 +61,7 @@ npm run lint
 │   ├── utils                  // 全局js
 │   ├── ├── auth.js            // 用户授权js, getToken,setToken,removeToken
 │   ├── ├── esresize.js        // echarts自适应js, 缩小浏览器时，echarts图标自适应
+│   ├── ├── event-bus.js       // vue 事件总线js
 │   ├── ├── variables.js       // 该js的用处在于，将 globle 对象中的变量进行导出,导出为全局变量
 │   ├── views                  // 页面书写处
 │   ├── App.vue                // 入口页面

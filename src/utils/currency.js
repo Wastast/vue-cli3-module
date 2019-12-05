@@ -1,7 +1,6 @@
 // 获取数据的类型
 export const getDataType = obj => {
   let type;
-
   if (obj === null) {
     return String(obj);
   }

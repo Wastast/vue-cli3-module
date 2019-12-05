@@ -25,7 +25,6 @@
               type="text"
             />
           </el-form-item>
-
           <el-form-item prop="password">
             <span class="span el-icon-lock"> </span>
             <el-input
