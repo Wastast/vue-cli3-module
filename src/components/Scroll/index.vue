@@ -12,6 +12,16 @@ export default {
   name: 'scroll',
   props: {
     option: {
+      default: () => {
+        return {
+          ops: {
+            vuescroll: {},
+            scrollPanel: {},
+            rail: {},
+            bar: {}
+          }
+        };
+      },
       validator: function(value) {
         let objArr = ['vuescroll', 'scrollPanel', 'rail', 'bar'];
         Object.keys(value).forEach(item => {
