@@ -7,6 +7,7 @@ import '@/styles/reset.css';
 import './icons/iconfonts/iconfont.css';
 import './permission';
 import '@/filter';
+import '@/directives';
 import '@/utils/variables';
 import echarts from 'echarts';
 import ElementUI from 'element-ui';
