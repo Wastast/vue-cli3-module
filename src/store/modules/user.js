@@ -4,8 +4,8 @@ const state = {
 
 const mutations = {
   // 设置token
-  SET_TOKEN(state, data) {
-    state.token = data;
+  SET_TOKEN(context, data) {
+    context.token = data;
   }
 };
 
