@@ -13,6 +13,13 @@ export const constantRoutes = [
     component: () => import('../views/login'),
     meta: { title: '登录' }
   },
+  {
+    path: '/',
+    name: 'fcreen',
+    hidden: true,
+    component: () => import('../views/Fscreen'),
+    meta: { title: '首屏' }
+  },
   // 404页面需要放到最末尾,先行注册404界面,否则无法指向404界面会报错
   {
     path: '/404',

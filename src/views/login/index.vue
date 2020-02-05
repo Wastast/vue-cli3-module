@@ -98,6 +98,7 @@ export default {
             });
             setToken(1);
             this.loading = false;
+            this.$router.push('/');
           } else {
             TipsPop({
               message: '用户名或密码错误',
@@ -108,6 +109,11 @@ export default {
         }
       });
     }
+  },
+  created() {
+    // 免登陆
+    // setToken(1);
+    // this.$router.push('/');
   },
   mounted() {},
   components: {}
