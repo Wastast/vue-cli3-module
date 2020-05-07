@@ -2,7 +2,7 @@
   <div class="login">
     <div class="login-box">
       <div class="logo">
-        <img src="@/assets/login/ab88e081ec9a239f0b8379f57a729cc.jpg" alt="没有图标" />
+        <img src="./login/ab88e081ec9a239f0b8379f57a729cc.jpg" alt="没有图标" />
       </div>
       <div class="text">
         余村数字乡村
@@ -48,8 +48,9 @@
 </template>
 
 <script>
-import { TipsPop } from '@/utils/el_ui';
+import { TipsPop } from '@/utils/tool';
 import { setToken } from '@/utils/auth.js';
+import { mapActions } from 'vuex';
 export default {
   name: 'login',
   data() {
@@ -88,33 +89,41 @@ export default {
   methods: {
     // 登录
     login() {
-      this.$refs['form'].validate(valid => {
+      this.$refs['form'].validate(async valid => {
         if (valid) {
           this.loading = true;
           let { username, password } = this.loginForm;
-          if (password === '123456' && username === 'admin') {
+          if (!(username === 'admin' && password === '123456')) {
+            TipsPop({
+              message: '用户名或密码错误',
+              type: 'error'
+            });
+            this.loading = false;
+            return;
+          }
+          let isLogin = await this.userLogin({
+            isNoLogin: true
+          });
+          if (isLogin) {
             TipsPop({
               message: '登录成功'
             });
-            setToken(1);
-            this.loading = false;
-            this.$router.push('/');
+            setTimeout(() => {
+              this.$router.push('/');
+            }, 500);
           } else {
             TipsPop({
               message: '用户名或密码错误',
-              type: 'info'
+              type: 'error'
             });
-            this.loading = false;
           }
+          this.loading = false;
         }
       });
-    }
+    },
+    ...mapActions(['userLogin'])
   },
-  created() {
-    // 免登陆
-    // setToken(1);
-    // this.$router.push('/');
-  },
+  created() {},
   mounted() {},
   components: {}
 };
@@ -159,7 +168,7 @@ export default {
 .login {
   width: 100vw;
   height: 100vh;
-  background: url('~@/assets/login/489F6A708413CF346F2BF557DCC079DD@2x.jpg');
+  background: url('./login/489F6A708413CF346F2BF557DCC079DD@2x.jpg');
   background-size: 100% 100%;
   .login-box {
     position: absolute;

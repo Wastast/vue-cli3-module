@@ -10,14 +10,14 @@ export const constantRoutes = [
     path: '/login',
     name: 'login',
     hidden: true,
-    component: () => import('../views/login'),
+    component: () => import('@/views/login'),
     meta: { title: '登录' }
   },
   {
     path: '/',
     name: 'fcreen',
     hidden: true,
-    component: () => import('../views/Fscreen'),
+    component: () => import('@/views/Fscreen'),
     meta: { title: '首屏' }
   },
   // 404页面需要放到最末尾,先行注册404界面,否则无法指向404界面会报错
@@ -25,7 +25,7 @@ export const constantRoutes = [
     path: '/404',
     name: 'page404',
     hidden: true,
-    component: () => import('../views/404'),
+    component: () => import('@/views/404'),
     meta: { title: '404' }
   },
   // 指向页面错误跳转到404
@@ -38,7 +38,6 @@ const createRouter = () =>
     scrollBehavior: () => ({ y: 0 }),
     routes: constantRoutes
   });
-// };
 
 // 重置路由方法
 export function resetRouter() {

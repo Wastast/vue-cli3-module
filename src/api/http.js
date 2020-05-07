@@ -1,7 +1,7 @@
 import axios from 'axios';
 import qs from 'qs';
 import { getToken, removeToken } from '@/utils/auth.js';
-import { TipsPop } from '@/utils/el_ui.js';
+import { TipsPop } from '@/utils/tool.js';
 
 let baseUrl = process.env.VUE_APP_BASE_API;
 // 将导出为全局

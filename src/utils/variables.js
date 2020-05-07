@@ -1,4 +1,4 @@
-import { getDataType } from '@/utils/currency';
+import { getDataType } from './tool';
 
 let globle = {
   req: process.env.VUE_APP_BASE_API,

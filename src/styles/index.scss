@@ -1,6 +1,7 @@
 // 从外部引入需要注册为全局使用的css样式
 @import './function.scss';
 @import './variables.scss';
+@import './flexBox.scss';
 .page-screen {
   width: px2rem(1920rem);
   height: px2rem(1080rem);
