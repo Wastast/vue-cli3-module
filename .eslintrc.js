@@ -6,7 +6,7 @@ module.exports = {
   extends: ['plugin:vue/essential', '@vue/standard'],
   //  0 | 1 | 2  取消 | 警告 | 报错
   rules: {
-    'no-console': 0, //禁止使用console
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off', // 在构建生产环境时禁止使用console
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     curly: [2, 'all'], //必须使用 if(){} 中的{}
     'space-before-function-paren': 0, // 函数名后面的括号可以不需要空格

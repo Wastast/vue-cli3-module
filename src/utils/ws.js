@@ -1,4 +1,4 @@
-// 复用webscoket
+// 复用 webscoket
 export const ws = ({ url = '', openCb, mesCb, closeCb }) => {
   let webScroket = new WebSocket(url);
   // 添加连接成功默认回调

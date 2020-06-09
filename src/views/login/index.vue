@@ -8,35 +8,14 @@
         余村数字乡村
       </div>
       <div class="denglu">
-        <el-form
-          ref="form"
-          :rules="loginRules"
-          class="form-box"
-          :model="loginForm"
-          label-width="0.6rem"
-        >
+        <el-form ref="form" :rules="loginRules" class="form-box" :model="loginForm" label-width="0.6rem">
           <el-form-item prop="username">
             <span class="span el-icon-user-solid"> </span>
-            <el-input
-              ref="username"
-              v-model="loginForm.username"
-              placeholder="请输入用户名"
-              name="username"
-              type="text"
-            />
+            <el-input ref="username" v-model="loginForm.username" placeholder="请输入用户名" name="username" type="text" />
           </el-form-item>
           <el-form-item prop="password">
             <span class="span el-icon-lock"> </span>
-            <el-input
-              :key="passwordType"
-              ref="password"
-              v-model="loginForm.password"
-              :type="passwordType"
-              placeholder="请输入密码"
-              name="password"
-              :show-password="true"
-              @keyup.enter.native="login"
-            />
+            <el-input :key="passwordType" ref="password" v-model="loginForm.password" :type="passwordType" placeholder="请输入密码" name="password" :show-password="true" @keyup.enter.native="login" />
           </el-form-item>
         </el-form>
       </div>
@@ -72,8 +51,8 @@ export default {
     };
     return {
       loginForm: {
-        username: '',
-        password: ''
+        username: 'admin',
+        password: '123456'
       },
       loginRules: {
         username: [{ required: true, trigger: 'blur', validator: validateUsername }],
