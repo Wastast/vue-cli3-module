@@ -18,7 +18,7 @@ export const constantRoutes = [
     name: 'fcreen',
     hidden: true,
     component: () => import('@/views/index'),
-    meta: { title: '首屏' }
+    meta: { title: '首页' }
   },
   // 404页面需要放到最末尾,先行注册404界面,否则无法指向404界面会报错
   {

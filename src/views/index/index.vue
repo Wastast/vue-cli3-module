@@ -1,7 +1,5 @@
 <template>
-  <div class="index">
-    <el-button>默认按钮</el-button>
-  </div>
+  <div class="index"></div>
 </template>
 
 <script>

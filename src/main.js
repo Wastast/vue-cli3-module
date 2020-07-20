@@ -10,10 +10,12 @@ import '@/directives';
 import '@/utils/variables';
 import echarts from 'echarts';
 
-import { Button } from 'element-ui';
+import { Form, FormItem, Input } from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 let element = {
-  Button: Button
+  Form: Form,
+  FormItem: FormItem,
+  Input: Input
 };
 
 Object.entries(element).forEach(([name, el]) => {
